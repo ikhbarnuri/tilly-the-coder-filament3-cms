@@ -33,6 +33,10 @@ class PostResource extends Resource
                 Forms\Components\TextInput::make('meta_description')
                     ->columnSpanFull()
                     ->label('Meta Description'),
+                Forms\Components\Select::make('categories')
+                    ->multiple()
+                    ->relationship('categories', 'title')
+                    ->columnSpanFull(),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                     ->image()
                     ->optimize('webp')
