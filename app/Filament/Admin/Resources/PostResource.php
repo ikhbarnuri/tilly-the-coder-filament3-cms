@@ -35,7 +35,7 @@ class PostResource extends Resource
                     ->label('Meta Description'),
                 Forms\Components\SpatieMediaLibraryFileUpload::make('image')
                     ->image()
-                    ->imageEditor()
+                    ->optimize('webp')
                     ->columnSpanFull(),
                 Forms\Components\RichEditor::make('content')
                     ->required()

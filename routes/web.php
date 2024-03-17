@@ -14,8 +14,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    $posts = \App\Models\Post::all();
+
+    return view('home', [
+        'posts' => $posts
+    ]);
 });
+
+Route::resource('post', \App\Models\Post::class);
 
 Route::middleware([
     'auth:sanctum',
